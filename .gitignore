@@ -1,0 +1,6 @@
+# Directories to Ignore
+bower_components
+node_modules
+
+# Files to Ignore
+npm-debug.log.*

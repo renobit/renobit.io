@@ -1,0 +1,25 @@
+{
+  "name": "renobit.io",
+  "version": "0.0.0",
+  "description": "renobit.io",
+  "main": "index.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+      "gulp": "^3.8.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/renobit/renobit.io.git"
+  },
+  "keywords": [
+    "renobit"
+  ],
+  "author": "David Myers <drmyersii>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/renobit/renobit.io#readme"
+}
