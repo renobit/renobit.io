@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var js_minify = require('gulp-uglify');
 var less = require('gulp-less');
 var css_minify = require('gulp-minify-css');
 
@@ -22,9 +23,12 @@ var paths = {
 
 
 gulp.task('js-minify', function () {
-    
-});
+    var stream = gulp.src(paths.js.src)
+        .pipe(js_minify())
+        .pipe(gulp.dest(paths.js.dest));
 
+    return stream;
+});
 
 gulp.task('less-compile', function () {
     var stream = gulp.src(paths.less.main)
