@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "description": "renobit.io",
   "main": "index.js",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
-      "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-less": "^3.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
