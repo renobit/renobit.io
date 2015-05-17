@@ -1,48 +1,51 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
+var css_minify = require('gulp-minify-css');
 
 
 var paths = {
-    scripts: {
-        src: ['app/coffee/main.coffee'],
-        dest: 'app/js'
+    js: {
+        src:  ['app/js/**/*.js']
+        main: ['app/js/main.js'],
+        dest:  'prod/js'
     },
-    styles: {
-        src: ['app/less/main.less'],
-        dest: 'app/css'
+    less: {
+        src:  ['app/less/**/*.less'],
+        main: ['app/less/main.less'],
+        dest:  'app/css'
+    },
+    css: {
+        main: ['app/css/main.css'],
+        dest:  'prod/css'
     }
 };
 
 
-gulp.task('scripts-compile', function () {
-    return gulp.src(paths.scripts.src)
-        .pipe(/*coffee()*/)
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-gulp.task('scripts-minify', function () {
-
+gulp.task('js-minify', function () {
+    
 });
 
 
-gulp.task('styles-compile', function () {
-    return gulp.src(paths.styles.src)
+gulp.task('less-compile', function () {
+    var stream = gulp.src(paths.less.main)
         .pipe(less())
-        .pipe(gulp.dest(paths.styles.dest));
+        .pipe(gulp.dest(paths.less.dest));
+
+    return stream;
 });
 
-gulp.task('styles-minify', function () {
+gulp.task('css-minify', ['less-compile'], function () {
+    var stream = gulp.src(paths.css.main)
+        .pipe(css_minify())
+        .pipe(gulp.dest(paths.css.dest));
 
+    return stream;
 });
 
 
 gulp.task('watch', function () {
-    //gulp.watch(paths.scripts.src, ['scripts-compile']);
-    gulp.watch(paths.styles.src, ['styles-compile']);
+    gulp.watch(paths.less.src, ['less-compile']);
 });
 
-gulp.task('prod', function () {
-
-});
-
+gulp.task('prod', ['js-minify', 'less-compile', 'css-minify']);
 gulp.task('default', ['prod']);
