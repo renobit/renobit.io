@@ -23,7 +23,7 @@ cp -R ./prod /path/to/public/dir/
 To work on this site, run the following command:
 
 ```bash
-gulp watch
+gulp serve
 ```
 
 This will watch the filesystem and any changes you make will automatically be updated accordingly. Currently, this will watch for changes to ```less``` and ```coffeescript``` files.

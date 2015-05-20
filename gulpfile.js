@@ -47,7 +47,7 @@ gulp.task('css-minify', ['less-compile'], function () {
 });
 
 
-gulp.task('watch', function () {
+gulp.task('serve', function () {
     gulp.watch(paths.less.src, ['less-compile']);
 });
 
