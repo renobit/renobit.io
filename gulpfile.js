@@ -1,12 +1,13 @@
-var gulp = require('gulp');
-var js_minify = require('gulp-uglify');
-var less = require('gulp-less');
+var gulp       = require('gulp');
+var js_minify  = require('gulp-uglify');
+var less       = require('gulp-less');
 var css_minify = require('gulp-minify-css');
+var exec       = require('child_process').exec;
 
 
 var paths = {
     js: {
-        src:  ['app/js/**/*.js']
+        src:  ['app/js/**/*.js'],
         main: ['app/js/main.js'],
         dest:  'prod/js'
     },
@@ -47,8 +48,15 @@ gulp.task('css-minify', ['less-compile'], function () {
 });
 
 
-gulp.task('serve', function () {
+gulp.task('serve', function (cb) {
     gulp.watch(paths.less.src, ['less-compile']);
+
+    exec('node index.js', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+
+        cb(err);
+    });
 });
 
 gulp.task('prod', ['js-minify', 'less-compile', 'css-minify']);
