@@ -14,7 +14,7 @@ gulp prod
 When the task finishes, you just need to copy all files in the ```prod``` directory into your public facing directory. E.g.:
 
 ```bash
-cp -R ./prod /path/to/public/dir/
+cp -R ./prod/* /path/to/public/dir/
 ```
 
 
