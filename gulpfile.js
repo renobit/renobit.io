@@ -1,7 +1,7 @@
 var gulp       = require('gulp');
-var js_minify  = require('gulp-uglify');
+var uglify     = require('gulp-uglify');
 var less       = require('gulp-less');
-var css_minify = require('gulp-minify-css');
+var minify_css = require('gulp-minify-css');
 var exec       = require('child_process').exec;
 
 
@@ -23,9 +23,9 @@ var paths = {
 };
 
 
-gulp.task('js-minify', function () {
+gulp.task('js-uglify', function () {
     var stream = gulp.src(paths.js.src)
-        .pipe(js_minify())
+        .pipe(uglify())
         .pipe(gulp.dest(paths.js.dest));
 
     return stream;
@@ -41,7 +41,7 @@ gulp.task('less-compile', function () {
 
 gulp.task('css-minify', ['less-compile'], function () {
     var stream = gulp.src(paths.css.main)
-        .pipe(css_minify())
+        .pipe(minify_css())
         .pipe(gulp.dest(paths.css.dest));
 
     return stream;
@@ -59,5 +59,5 @@ gulp.task('serve', function (cb) {
     });
 });
 
-gulp.task('prod', ['js-minify', 'less-compile', 'css-minify']);
+gulp.task('prod', ['js-uglify', 'less-compile', 'css-minify']);
 gulp.task('default', ['prod']);
