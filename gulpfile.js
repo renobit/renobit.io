@@ -58,6 +58,7 @@ gulp.task('css-minify', ['less-compile'], function () {
 
 
 gulp.task('serve', function (cb) {
+    gulp.watch(paths.js.src, ['js-browserify']);
     gulp.watch(paths.less.src, ['less-compile']);
 
     exec('node index.js', function (err, stdout, stderr) {
