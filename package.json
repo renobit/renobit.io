@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/renobit/renobit.io.git"
+    "url": "git+https://github.com/renobit/renobit.io.git"
   },
   "keywords": [
     "renobit"
   ],
   "author": "David Myers <drmyersii>",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/renobit/renobit.io#readme"
+  "homepage": "https://github.com/renobit/renobit.io#readme"
 }
