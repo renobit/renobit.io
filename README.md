@@ -26,4 +26,4 @@ To work on this site, run the following command:
 gulp serve
 ```
 
-This will watch the filesystem and any changes you make will automatically be updated accordingly. Currently, this will watch for changes to ```less``` and ```coffeescript``` files.
+This will watch the filesystem and any changes you make will automatically be updated accordingly. Currently, this will watch for changes to ```less``` and ```coffeescript``` files. This will also launch a node dev server for you to easily test the site out in the browser locally. Just navigate to ```http://localhost:1337``` in your browser of choice.
