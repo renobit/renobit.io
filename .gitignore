@@ -1,6 +1,7 @@
 # Directories to Ignore
 bower_components
 node_modules
+prod
 
 # Files to Ignore
 npm-debug.log.*
