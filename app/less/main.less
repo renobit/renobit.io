@@ -38,6 +38,7 @@
 }
 
 body {
+    color: #2c2c2c;
     font-family: sans-serif;
     margin: 0;
     text-align: center;
@@ -45,6 +46,10 @@ body {
     &.nav-active {
 		nav#nav {
 			top: -25vh;
+
+            ul {
+                .util-transform(scale(1));
+            }
 		}
 
         #nav-toggle {
@@ -56,6 +61,10 @@ body {
 			}
 		}
 	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
 }
 
 ul {
@@ -84,7 +93,7 @@ header#header {
         font-weight: normal;
         margin: 1.25rem;
         text-align: left;
-        text-transform: uppercase;
+        text-transform: lowercase;
     }
 }
 
@@ -139,6 +148,9 @@ nav#nav {
 		max-height: 100vh;
 		overflow: auto;
 
+        // .util-transform(scale(1.2));
+        // .util-transition(0.75s transform);
+
 		li {
 			line-height: 4rem;
 
@@ -184,9 +196,32 @@ nav#nav {
 	}
 }
 
+section:not(#hero) {
+    padding: 1rem;
+    text-align: left;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+    }
+
+    p {
+        letter-spacing: 1px;
+        line-height: 175%;
+        margin-bottom: 1.5rem;
+    }
+}
+
 
 @media screen and (min-width: 50rem) {
     html {
-        font-size: 1.3rem;
+        // font-size: 1.3rem;
+    }
+
+    .content-wrapper {
+        margin: auto;
+        max-width: 50rem;
     }
 }

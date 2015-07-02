@@ -6,6 +6,7 @@
   -webkit-box-sizing: border-box;
 }
 body {
+  color: #2c2c2c;
   font-family: sans-serif;
   margin: 0;
   text-align: center;
@@ -13,12 +14,27 @@ body {
 body.nav-active nav#nav {
   top: -25vh;
 }
+body.nav-active nav#nav ul {
+  transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  -webkit-transform: scale(1);
+}
 body.nav-active #nav-toggle {
   background-color: #fff;
   border-color: #fff;
 }
 body.nav-active #nav-toggle > span {
   background-color: #5dbede;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 ul {
   list-style: none;
@@ -41,7 +57,7 @@ header#header #brand {
   font-weight: normal;
   margin: 1.25rem;
   text-align: left;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 #hero {
   background: #5dbede;
@@ -138,8 +154,24 @@ nav#nav ul li a:active {
 #nav-toggle > span:first-child + span {
   margin: 0.3125rem 0;
 }
+section:not(#hero) {
+  padding: 1rem;
+  text-align: left;
+}
+section:not(#hero) h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+section:not(#hero) p {
+  letter-spacing: 1px;
+  line-height: 175%;
+  margin-bottom: 1.5rem;
+}
 @media screen and (min-width: 50rem) {
-  html {
-    font-size: 1.3rem;
+  .content-wrapper {
+    margin: auto;
+    max-width: 50rem;
   }
 }
