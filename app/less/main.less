@@ -1,5 +1,6 @@
 // @color-primary: #09a1d7;
 @color-primary: #5dbede;
+@color-secondary: #1b8fb6;
 
 .util-box-sizing(@sizing) {
     box-sizing: @sizing;
@@ -39,7 +40,7 @@
 
 body {
     color: #2c2c2c;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     text-align: center;
 
@@ -64,7 +65,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
+    font-weight: 300;
 }
 
 ul {
@@ -76,12 +77,18 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
 header#header {
-    background-color: @color-primary;
-    // background-color: #fff;
+    // background-color: @color-primary;
+    background-color: #222;
 	// border-top: 0.1875rem solid @color-primary;
 	height: 4rem;
     overflow: hidden;
+    position: relative;
 	width: 100%;
 
     a {
@@ -90,10 +97,11 @@ header#header {
 
     #brand {
         font-size: 1.5rem;
-        font-weight: normal;
-        margin: 1.25rem;
+        font-weight: 300;
+        margin: 1rem;
         text-align: left;
-        text-transform: lowercase;
+        text-transform: uppercase;
+        vertical-align: bottom;
     }
 }
 
@@ -103,7 +111,7 @@ header#header {
     overflow: hidden;
 
     h2 {
-        font-weight: normal;
+        // font-weight: 300;
         margin: 2rem 0;
     }
 
@@ -114,11 +122,16 @@ header#header {
 			border: 0.125rem solid #fff;
             color: #fff;
 			// font-size: 60%;
-			margin: 0 0 2rem 0;
+			margin: 0 0.25rem 2rem 0.25rem;
 			padding: 0.5rem 0.75rem;
 			text-transform: none;
 
 			.util-border-radius(0.125rem);
+
+            &.primary {
+                border-color: @color-secondary;
+                color: @color-secondary;
+            }
 		}
     }
 }
@@ -168,8 +181,10 @@ nav#nav {
 }
 
 #nav-toggle {
-    background-color: @color-primary;
-	border: 0.125rem solid @color-primary;
+    background-color: #222;
+    // background-color: @color-primary;
+	border: 0.125rem solid #222;
+	// border: 0.125rem solid @color-primary;
 	cursor: pointer;
 	margin: 1rem;
 	overflow: hidden;
@@ -197,23 +212,64 @@ nav#nav {
 }
 
 section:not(#hero) {
-    padding: 1rem;
     text-align: left;
 
     h2 {
         font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
+        // font-weight: bold;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
+        width: auto;
     }
 
     p {
+        font-weight: 200;
         letter-spacing: 1px;
         line-height: 175%;
         margin-bottom: 1.5rem;
     }
+
+    .content-wrapper {
+        padding: 1rem;
+    }
+
+    .separator {
+        background-color: @color-primary;
+        height: 0.125rem;
+        margin-bottom: 2rem;
+        width: 1.5rem;
+    }
 }
 
+footer#footer {
+    background-color: #eaeaea;
+    color: #222;
+
+    .content-wrapper {
+        padding: 1rem;
+    }
+
+    .grid {
+        justify-content: space-between;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+
+    .sm-1-1 {
+        padding: 0.75rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .sm-1-2 {
+        padding: 0.75rem;
+        text-align: center;
+        width: 50%;
+    }
+}
 
 @media screen and (min-width: 50rem) {
     html {
@@ -222,6 +278,88 @@ section:not(#hero) {
 
     .content-wrapper {
         margin: auto;
-        max-width: 50rem;
+        max-width: 60rem;
+    }
+
+    header#header .content-wrapper {
+        overflow: hidden;
+        position: relative;
+
+        #brand {
+            font-size: 1.75rem;
+
+            a:hover, a:active {
+                color: @color-primary;
+            }
+        }
+    }
+
+    nav#nav {
+        background-color: transparent;
+        display: block;
+        height: auto;
+        left: auto;
+        right: 0;
+        position: absolute;
+        top: 0;
+        width: auto;
+
+        ul {
+            li {
+                display: table-cell;
+
+                a {
+                    display: inline;
+                    font-size: 1.25rem;
+                    margin-left: 0.5rem;
+                    padding: 0.5rem;
+
+                    &:hover, &:active {
+                        background-color: transparent;
+                        border-bottom: 0.125rem solid @color-primary;
+                    }
+                }
+
+                &:last-child a {
+                    border: 0.125rem solid #fff;
+
+                    &:hover, &:active {
+                        border-color: @color-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    #hero {
+        h2 {
+            font-size: 2rem;
+        }
+
+        .button {
+            font-size: 1.25rem;
+        }
+
+        br {
+            // display: none;
+        }
+    }
+
+    .grid {
+        .lg-1-2 {
+            padding: 1.5rem;
+            text-align: center;
+            width: 50%;
+        }
+
+        .lg-1-4 {
+            padding: 1.5rem;
+            text-align: center;
+            width: 25%;
+        }
     }
 }

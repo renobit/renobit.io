@@ -7,7 +7,7 @@
 }
 body {
   color: #2c2c2c;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
   text-align: center;
 }
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  font-weight: 300;
 }
 ul {
   list-style: none;
@@ -43,10 +43,15 @@ ul {
 a {
   text-decoration: none;
 }
+img {
+  max-width: 100%;
+  width: 100%;
+}
 header#header {
-  background-color: #5dbede;
+  background-color: #222;
   height: 4rem;
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
 header#header a {
@@ -54,10 +59,11 @@ header#header a {
 }
 header#header #brand {
   font-size: 1.5rem;
-  font-weight: normal;
-  margin: 1.25rem;
+  font-weight: 300;
+  margin: 1rem;
   text-align: left;
-  text-transform: lowercase;
+  text-transform: uppercase;
+  vertical-align: bottom;
 }
 #hero {
   background: #5dbede;
@@ -65,7 +71,6 @@ header#header #brand {
   overflow: hidden;
 }
 #hero h2 {
-  font-weight: normal;
   margin: 2rem 0;
 }
 #hero a {
@@ -74,7 +79,7 @@ header#header #brand {
 #hero a.button {
   border: 0.125rem solid #fff;
   color: #fff;
-  margin: 0 0 2rem 0;
+  margin: 0 0.25rem 2rem 0.25rem;
   padding: 0.5rem 0.75rem;
   text-transform: none;
   border-radius: 0.125rem;
@@ -82,6 +87,10 @@ header#header #brand {
   -ms-border-radius: 0.125rem;
   -o-border-radius: 0.125rem;
   -webkit-border-radius: 0.125rem;
+}
+#hero a.button.primary {
+  border-color: #1b8fb6;
+  color: #1b8fb6;
 }
 nav#nav {
   background-color: #5dbede;
@@ -123,8 +132,8 @@ nav#nav ul li a:active {
   background-color: rgba(0, 0, 0, 0.1);
 }
 #nav-toggle {
-  background-color: #5dbede;
-  border: 0.125rem solid #5dbede;
+  background-color: #222;
+  border: 0.125rem solid #222;
   cursor: pointer;
   margin: 1rem;
   overflow: hidden;
@@ -155,23 +164,117 @@ nav#nav ul li a:active {
   margin: 0.3125rem 0;
 }
 section:not(#hero) {
-  padding: 1rem;
   text-align: left;
 }
 section:not(#hero) h2 {
   font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
+  width: auto;
 }
 section:not(#hero) p {
+  font-weight: 200;
   letter-spacing: 1px;
   line-height: 175%;
   margin-bottom: 1.5rem;
 }
+section:not(#hero) .content-wrapper {
+  padding: 1rem;
+}
+section:not(#hero) .separator {
+  background-color: #5dbede;
+  height: 0.125rem;
+  margin-bottom: 2rem;
+  width: 1.5rem;
+}
+footer#footer {
+  background-color: #eaeaea;
+  color: #222;
+}
+footer#footer .content-wrapper {
+  padding: 1rem;
+}
+footer#footer .grid {
+  justify-content: space-between;
+}
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+.grid .sm-1-1 {
+  padding: 0.75rem;
+  text-align: center;
+  width: 100%;
+}
+.grid .sm-1-2 {
+  padding: 0.75rem;
+  text-align: center;
+  width: 50%;
+}
 @media screen and (min-width: 50rem) {
   .content-wrapper {
     margin: auto;
-    max-width: 50rem;
+    max-width: 60rem;
+  }
+  header#header .content-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  header#header .content-wrapper #brand {
+    font-size: 1.75rem;
+  }
+  header#header .content-wrapper #brand a:hover,
+  header#header .content-wrapper #brand a:active {
+    color: #5dbede;
+  }
+  nav#nav {
+    background-color: transparent;
+    display: block;
+    height: auto;
+    left: auto;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: auto;
+  }
+  nav#nav ul li {
+    display: table-cell;
+  }
+  nav#nav ul li a {
+    display: inline;
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+  }
+  nav#nav ul li a:hover,
+  nav#nav ul li a:active {
+    background-color: transparent;
+    border-bottom: 0.125rem solid #5dbede;
+  }
+  nav#nav ul li:last-child a {
+    border: 0.125rem solid #fff;
+  }
+  nav#nav ul li:last-child a:hover,
+  nav#nav ul li:last-child a:active {
+    border-color: #5dbede;
+  }
+  #nav-toggle {
+    display: none;
+  }
+  #hero h2 {
+    font-size: 2rem;
+  }
+  #hero .button {
+    font-size: 1.25rem;
+  }
+  .grid .lg-1-2 {
+    padding: 1.5rem;
+    text-align: center;
+    width: 50%;
+  }
+  .grid .lg-1-4 {
+    padding: 1.5rem;
+    text-align: center;
+    width: 25%;
   }
 }
