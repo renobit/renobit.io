@@ -44,6 +44,8 @@ body {
     margin: 0;
     text-align: center;
 
+    -webkit-font-smoothing: antialiased;
+
     &.nav-active {
 		nav#nav {
 			top: -25vh;
@@ -75,7 +77,6 @@ ul {
 
 a {
     color: @color-secondary;
-    font-weight: 400;
     text-decoration: none;
 }
 
@@ -229,6 +230,10 @@ section:not(#hero) {
         letter-spacing: 1px;
         line-height: 175%;
         margin-bottom: 1.5rem;
+    }
+
+    a {
+        font-weight: 400;
     }
 
     .content-wrapper {

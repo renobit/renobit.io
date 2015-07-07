@@ -10,6 +10,7 @@ body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
   text-align: center;
+  -webkit-font-smoothing: antialiased;
 }
 body.nav-active nav#nav {
   top: -25vh;
@@ -42,7 +43,6 @@ ul {
 }
 a {
   color: #1b8fb6;
-  font-weight: 400;
   text-decoration: none;
 }
 img {
@@ -179,6 +179,9 @@ section:not(#hero) p {
   letter-spacing: 1px;
   line-height: 175%;
   margin-bottom: 1.5rem;
+}
+section:not(#hero) a {
+  font-weight: 400;
 }
 section:not(#hero) .content-wrapper {
   padding: 1rem;
