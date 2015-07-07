@@ -41,6 +41,8 @@ ul {
   padding: 0;
 }
 a {
+  color: #1b8fb6;
+  font-weight: 400;
   text-decoration: none;
 }
 img {
@@ -188,7 +190,7 @@ section:not(#hero) .separator {
   width: 1.5rem;
 }
 footer#footer {
-  background-color: #eaeaea;
+  background-color: #f7f7f7;
   color: #222;
 }
 footer#footer .content-wrapper {
