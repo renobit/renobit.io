@@ -77,6 +77,11 @@ header#header #brand {
 }
 #hero a {
   display: inline-block;
+  transition: 0.25s background-color, 0.25s color;
+  -moz-transition: 0.25s background-color, 0.25s color;
+  -ms-transition: 0.25s background-color, 0.25s color;
+  -o-transition: 0.25s background-color, 0.25s color;
+  -webkit-transition: 0.25s background-color, 0.25s color;
 }
 #hero a.button {
   border: 0.125rem solid #fff;
@@ -84,15 +89,20 @@ header#header #brand {
   margin: 0 0.25rem 2rem 0.25rem;
   padding: 0.5rem 0.75rem;
   text-transform: none;
-  border-radius: 0.125rem;
-  -moz-border-radius: 0.125rem;
-  -ms-border-radius: 0.125rem;
-  -o-border-radius: 0.125rem;
-  -webkit-border-radius: 0.125rem;
 }
-#hero a.button.primary {
+#hero a.button:hover,
+#hero a.button:active {
+  background-color: #fff;
+  color: #5dbede;
+}
+#hero a.button.secondary {
   border-color: #1b8fb6;
   color: #1b8fb6;
+}
+#hero a.button.secondary:hover,
+#hero a.button.secondary:active {
+  background-color: #1b8fb6;
+  color: #5dbede;
 }
 nav#nav {
   background-color: #5dbede;
@@ -145,22 +155,22 @@ nav#nav ul li a:active {
   top: 0;
   width: 2.5rem;
   z-index: 9999;
-  transition: 1s border-color;
-  -moz-transition: 1s border-color;
-  -ms-transition: 1s border-color;
-  -o-transition: 1s border-color;
-  -webkit-transition: 1s border-color;
+  transition: 0.25s background-color, 0.25s border-color;
+  -moz-transition: 0.25s background-color, 0.25s border-color;
+  -ms-transition: 0.25s background-color, 0.25s border-color;
+  -o-transition: 0.25s background-color, 0.25s border-color;
+  -webkit-transition: 0.25s background-color, 0.25s border-color;
 }
 #nav-toggle > span {
   background-color: #fff;
   display: block;
   height: 0.125rem;
   width: 100%;
-  transition: 1s background-color;
-  -moz-transition: 1s background-color;
-  -ms-transition: 1s background-color;
-  -o-transition: 1s background-color;
-  -webkit-transition: 1s background-color;
+  transition: 0.25s background-color;
+  -moz-transition: 0.25s background-color;
+  -ms-transition: 0.25s background-color;
+  -o-transition: 0.25s background-color;
+  -webkit-transition: 0.25s background-color;
 }
 #nav-toggle > span:first-child + span {
   margin: 0.3125rem 0;
@@ -228,10 +238,6 @@ footer#footer .grid {
   header#header .content-wrapper #brand {
     font-size: 1.75rem;
   }
-  header#header .content-wrapper #brand a:hover,
-  header#header .content-wrapper #brand a:active {
-    color: #5dbede;
-  }
   nav#nav {
     background-color: transparent;
     display: block;
@@ -250,18 +256,16 @@ footer#footer .grid {
     font-size: 1.25rem;
     margin-left: 0.5rem;
     padding: 0.5rem;
+    transition: 0.25s color;
+    -moz-transition: 0.25s color;
+    -ms-transition: 0.25s color;
+    -o-transition: 0.25s color;
+    -webkit-transition: 0.25s color;
   }
   nav#nav ul li a:hover,
   nav#nav ul li a:active {
-    background-color: transparent;
-    border-bottom: 0.125rem solid #5dbede;
-  }
-  nav#nav ul li:last-child a {
-    border: 0.125rem solid #fff;
-  }
-  nav#nav ul li:last-child a:hover,
-  nav#nav ul li:last-child a:active {
-    border-color: #5dbede;
+    background-color: inherit;
+    color: #5dbede;
   }
   #nav-toggle {
     display: none;

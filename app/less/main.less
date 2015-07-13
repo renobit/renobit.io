@@ -121,6 +121,8 @@ header#header {
     a {
         display: inline-block;
 
+        .util-transition(0.25s background-color, 0.25s color;);
+
 		&.button {
 			border: 0.125rem solid #fff;
             color: #fff;
@@ -129,11 +131,19 @@ header#header {
 			padding: 0.5rem 0.75rem;
 			text-transform: none;
 
-			.util-border-radius(0.125rem);
+            &:hover, &:active {
+                background-color: #fff;
+                color: @color-primary;
+            }
 
-            &.primary {
+            &.secondary {
                 border-color: @color-secondary;
                 color: @color-secondary;
+
+                &:hover, &:active {
+                    background-color: @color-secondary;
+                    color: @color-primary;
+                }
             }
 		}
     }
@@ -185,9 +195,7 @@ nav#nav {
 
 #nav-toggle {
     background-color: #222;
-    // background-color: @color-primary;
 	border: 0.125rem solid #222;
-	// border: 0.125rem solid @color-primary;
 	cursor: pointer;
 	margin: 1rem;
 	overflow: hidden;
@@ -198,7 +206,7 @@ nav#nav {
 	width: 2.5rem;
 	z-index: 9999;
 
-	.util-transition(1s border-color);
+	.util-transition(0.25s background-color, 0.25s border-color;);
 
 	> span {
 		background-color: #fff;
@@ -206,7 +214,7 @@ nav#nav {
 		height: 0.125rem;
 		width: 100%;
 
-		.util-transition(1s background-color);
+		.util-transition(0.25s background-color);
 
 		&:first-child + span {
 			margin: 0.3125rem 0;
@@ -294,10 +302,6 @@ footer#footer {
 
         #brand {
             font-size: 1.75rem;
-
-            a:hover, a:active {
-                color: @color-primary;
-            }
         }
     }
 
@@ -321,17 +325,11 @@ footer#footer {
                     margin-left: 0.5rem;
                     padding: 0.5rem;
 
-                    &:hover, &:active {
-                        background-color: transparent;
-                        border-bottom: 0.125rem solid @color-primary;
-                    }
-                }
-
-                &:last-child a {
-                    border: 0.125rem solid #fff;
+                    .util-transition(0.25s color);
 
                     &:hover, &:active {
-                        border-color: @color-primary;
+                        background-color: inherit;
+                        color: @color-primary;
                     }
                 }
             }
