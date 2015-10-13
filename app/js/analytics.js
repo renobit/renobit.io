@@ -1,6 +1,6 @@
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+(function(r,e,n,o,b,i,t){r['GoogleAnalyticsObject']=b;r[b]=r[b]||function(){
+(r[b].q=r[b].q||[]).push(arguments)},r[b].l=1*new Date();i=e.createElement(n),
+t=e.getElementsByTagName(n)[0];i.async=1;i.src=o;t.parentNode.insertBefore(i,t)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-64854028-1', 'auto');
